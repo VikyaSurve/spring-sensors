@@ -3,15 +3,11 @@ kind: Workload
 metadata:
   name: spring-sensors
   labels:
-    app.kubernetes.io/name: spring-sensors
-    app.tanzu.vmware.com/workload-type: web-app
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/part-of: spring-sensors
 spec:
   source:
     git:
-      # update when code is pushed to a new location
-      url: $GITREPO
+      url: https://github.com/VikyaSurve/spring-sensors
       ref:
         branch: main
-  env:
-  - name: TESTVAR
-    value: aoeu
